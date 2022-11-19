@@ -1,4 +1,4 @@
-<img src="https://github.com/Art-Finers/GGH-3/blob/main/samply.png" alt="Samply" width="200" height="200">
+<img src="https://github.com/Art-Finers/GGH-3/blob/main/samply.png" alt="Samply">
 
  [![Profile][title-img]][profile]
 
