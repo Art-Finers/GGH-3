@@ -38,6 +38,7 @@
     },
     "type": "module",
     "dependencies": {
-        "as-bind": "^0.8.2"
+        "json-as": "^0.5.4",
+        "visitor-as": "^0.11.3"
     }
 }
