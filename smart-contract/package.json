@@ -38,6 +38,9 @@
     },
     "type": "module",
     "dependencies": {
-        "as-bind": "^0.8.2"
+        "as-bind": "^0.8.2",
+        "assemblyscript-json": "^1.1.0",
+        "json-as": "^0.5.4",
+        "visitor-as": "^0.11.3"
     }
 }
