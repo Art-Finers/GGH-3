@@ -78,26 +78,7 @@ export default class SampleLoader extends React.Component {
 
   upload = () => {
     let args = new Args();
-
-    args.addString(sc_addr + this.state.index)
-    args.addString(this.state.samples[this.state.index])
-
-    let parent_authors_index = new Array<number>();
-    let parent_uris_index = new Array<number>();
-
-    if (this.state.index != 0) {
-      for (let i = 0; i < this.state.index; i++) {
-        parent_authors_index.push(i);
-        parent_uris_index.push(0);
-      }
-    }
-
-    args.addString(parent_authors_index.toString());
-    args.addString(parent_uris_index.toString());
-
-    this.state.index += 1;
-    this.setState(this.state);
-
+  
     ClientFactory.createDefaultClient(
       DefaultProviderUrls.TESTNET,
       false,
