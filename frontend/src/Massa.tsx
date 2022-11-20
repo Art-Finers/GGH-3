@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 const Button = styled.button`
     background-color: white; 
     position: relative;
-    margin-top:23%;
+    margin-top:18%;
     text-align:center;
     border-radius:4px;
     font-size:20px;
