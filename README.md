@@ -59,6 +59,9 @@ Our repository for the project has the following architecture:
 
 ## Plugin Mockup
 
+Here is a **mockup** for the plugin, it is available more precisely in [this](https://www.figma.com/file/5fD7WUlPl4NTkGBgKB3Eyp/plugin?node-id=0%3A1&t=I4ee0qfRLHHGaGAG-1
+) link !
+
 <img src="https://github.com/Art-Finers/GGH-3/blob/main/plugin.png" alt="Plugin Mockup">
 
 
