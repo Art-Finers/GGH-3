@@ -28,42 +28,6 @@ class Sample {
     this.childrenAuthorsIndexes.push(childAuthorIndex);
     this.childrenUrisIndexes.push(childUriIndex);
   }
-
-  // toString(): string {
-  //   return this.ownerIndex + ","
-  //     + this.uri + ","
-  //     + this.parentsAuthorsIndexes.length + ","
-  //     + this.parentsAuthorsIndexes + ","
-  //     + this.parentsUrisIndexes + ","
-  //     + this.childrenAuthorsIndexes.length + ","
-  //     + this.childrenAuthorsIndexes + ","
-  //     + this.childrenUrisIndexes;
-  // }
-
-  // static fromString(str: string): Sample {
-  //   let parts = str.split(",");
-  //   let ownerIndex = parseInt(parts[0]);
-  //   let uri = parts[1];
-  //   let parentsLength = parseInt(parts[2]);
-  //   let parentsAuthorsIndexes = new Array<number>();
-  //   for (let i = 0; i < parentsLength; i++) {
-  //     parentsAuthorsIndexes.push(parseInt(parts[3 + i]));
-  //   }
-  //   let parentsUrisIndexes = new Array<number>();
-  //   for (let i = 0; i < parentsLength; i++) {
-  //     parentsUrisIndexes.push(parseInt(parts[3 + parentsLength + i]));
-  //   }
-  //   let childrenLength = parseInt(parts[3 + 2 * parentsLength]);
-  //   let childrenAuthorsIndexes = new Array<number>();
-  //   for (let i = 0; i < childrenLength; i++) {
-  //     childrenAuthorsIndexes.push(parseInt(parts[4 + 2 * parentsLength + i]));
-  //   }
-  //   let childrenUrisIndexes = new Array<number>();
-  //   for (let i = 0; i < childrenLength; i++) {
-  //     childrenUrisIndexes.push(parseInt(parts[4 + 2 * parentsLength + childrenLength + i]));
-  //   }
-  //   return new Sample(ownerIndex, uri, parentsAuthorsIndexes, parentsUrisIndexes, childrenAuthorsIndexes, childrenUrisIndexes);
-  // }
 }
 
 export function initialize(_args: string): void {
