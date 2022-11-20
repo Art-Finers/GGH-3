@@ -9,6 +9,7 @@ function createContract(): Address {
 
 export function main(_args: string): void {
     const sc_address = createContract();
-    generateEvent("Created sample smart-contract at:" + sc_address.toByteString());
+    call(sc_address, "initialize", new Args(), 0);
+    generateEvent("Created sample smart-contract at: " + sc_address.toByteString());
     return;
 }

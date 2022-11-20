@@ -2,11 +2,8 @@
  * using Massa Labs SDK
  * */
 import { Storage, generateEvent, Args, Address } from "@massalabs/massa-as-sdk";
-import { SampleAttributes } from "./sample-attributes";
 
-
-
-export function initialize(): void {
+export function initialize(_args : string): void {
   Storage.set("sample_count", "0");
 }
 
@@ -23,60 +20,21 @@ export function createSample(_args: string): void {
   let uri = args_object.nextString();
 
   if (sample_count == 1) {
-    let sample_map = new Map<string, SampleAttributes>();
-    sample_map[uri] = new SampleAttributes();
-    Storage.set(author, sample_map.toString());
+    let sample_array = new Array<string>();
+    sample_array.push(uri);
+    Storage.set(author, sample_array.toString());
     return;
   }
 
-  let parents = new Map<string, Array<string>>();
-  let len_parents = args_object.nextI32();
-  for (let i = 0; i < len_parents; i++) {
-    let parent_author = args_object.nextString();
-    let len_uris = args_object.nextI32();
-    let parent_uris = new Array<string>();
-
-    // let parent_map: Map<string, SampleAttributes> = JSON.parse(Storage.get(parent_author));
-
-    // To add child, we need to get the parent's map
-    let keyValuePairs = Storage.get(parent_author).slice(1, -1) //remove first and last character
-      .split(/\s*,\s*/)                     //split with optional spaces around the comma
-      .map(chunk => chunk.split("="));      //split key=value
-
-    // Cast to Map<string, SampleAttributes>
-    let parent_map = new Map<string, SampleAttributes>();
-    for (let i = 0; i < keyValuePairs.length; i++) {
-      let key = keyValuePairs[i][0];
-      let value = keyValuePairs[i][1];
-      parent_map[key] = JSON.parse(value);
-    }
-    parent_map.toString();
-
-    for (let j = 0; j < len_uris; j++) {
-      let parent_uri = args_object.nextString();
-      parent_uris.push(parent_uri);
-
-
-      let parent_sample_attributes = parent_map[parent_uri];
-      parent_sample_attributes.addChild(author, uri);
-    }
-
-    parents.set(parent_author, parent_uris);
-  }
-
-  let sample_attributes = new SampleAttributes(parents);
-  let sample_map: Map<string, SampleAttributes> = new Map<string, SampleAttributes>();
-  sample_map[uri] = sample_attributes;
-
   // Check if the author already exists in the storage
-  let author_samples: Map<string, SampleAttributes> = JSON.parse(Storage.get(author));
+  let author_samples: Array<string> = Storage.get(author).split(',');
 
   // If the author does not exist, create a new sample
   if (author_samples == null) {
-    Storage.set(author, sample_map.toString());
+    Storage.set(author, new Array<string>().push(uri).toString());
   }
   else {
-    author_samples[uri] = sample_attributes;
+    author_samples.push(uri);
     Storage.set(author, author_samples.toString());
   }
 
