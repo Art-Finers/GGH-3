@@ -63,7 +63,7 @@ function NodeInfo() {
 
 export default class SampleLoader extends React.Component {
   state = {
-    name: 'Anand',
+    name: 'Samply',
   };
 
   // constructor(props) {

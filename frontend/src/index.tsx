@@ -4,12 +4,14 @@ import './index.css';
 import SampleLoader from './App';
 import Header from './Header';
 import reportWebVitals from './reportWebVitals';
+import TextField from './textField';
 import Massa from './Massa';
 
 ReactDOM.render(
   <React.StrictMode>
     <Header />
     <SampleLoader />
+    <TextField/>
     <Massa />
   </React.StrictMode>,
   document.getElementById('root')
