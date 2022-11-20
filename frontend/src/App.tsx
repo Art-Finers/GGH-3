@@ -63,11 +63,7 @@ function NodeInfo() {
 
 export default class SampleLoader extends React.Component {
   state = {
-    index: 0,
-    samples: ["https://github.com/Art-Finers/GGH-3/blob/main/samples/bouing07.wav",
-      "https://github.com/Art-Finers/GGH-3/blob/main/samples/grince04.wav",
-      "https://github.com/Art-Finers/GGH-3/blob/main/samples/toc17.wav",
-    ],
+    name: 'Samply',
   };
 
   // constructor(props) {
@@ -150,9 +146,7 @@ export default class SampleLoader extends React.Component {
   render() {
     const state = this.state;
     return (
-      <div>
-        <h1>{state.index}</h1>
-        <h2>{state.samples[state.index]}</h2>
+      <div id="content">
         <button onClick={this.upload}>Upload</button>
         <button onClick={this.download}>Download</button>
       </div>
