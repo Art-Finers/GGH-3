@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import SampleLoader from './App';
 import reportWebVitals from './reportWebVitals';
+import TextField from './textField';
 
 ReactDOM.render(
   <React.StrictMode>
     <SampleLoader />
+    <TextField/>
   </React.StrictMode>,
   document.getElementById('root')
 );
