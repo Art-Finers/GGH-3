@@ -17,7 +17,7 @@ const baseAccount = {
 
 type TNodeStatus = INodeStatus | null;
 
-const sc_addr = "A1X9sfHe1eMaUh61dtbiR8JtaZVyys7rKjvtbvMoM4sGzqwaP1A"
+const sc_addr = "A1NhK6TKscteBNbBPZrSBup733PTH4yM3SjvjQjXKgaQCBJ8qTp"
 
 function NodeInfo() {
   const [nodeStatus, setNodeStatus] = useState<TNodeStatus>(null);
@@ -77,6 +77,27 @@ export default class SampleLoader extends React.Component {
   };
 
   upload = () => {
+    let args = new Args();
+
+    args.addString(sc_addr + this.state.index)
+    args.addString(this.state.samples[this.state.index])
+
+    let parent_authors_index = new Array<number>();
+    let parent_uris_index = new Array<number>();
+
+    if (this.state.index != 0) {
+      for (let i = 0; i < this.state.index; i++) {
+        parent_authors_index.push(i);
+        parent_uris_index.push(0);
+      }
+    }
+
+    args.addString(parent_authors_index.toString());
+    args.addString(parent_uris_index.toString());
+
+    this.state.index += 1;
+    this.setState(this.state);
+
     ClientFactory.createDefaultClient(
       DefaultProviderUrls.TESTNET,
       false,
@@ -97,11 +118,11 @@ export default class SampleLoader extends React.Component {
           /// Target function name. No function is called if empty.
           functionName: "createSample",
           /// Parameter to pass to the target function
-          parameter: new Args().addString("Hello").addString("World!").serialize(),
+          parameter: args.serialize(),
         },
         baseAccount
       ).then(function (txid) {
-        console.log("upload sample ", "", txid);
+        console.log("upload sample ", txid);
       });
     });
   }

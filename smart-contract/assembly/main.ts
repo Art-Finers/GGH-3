@@ -3,7 +3,7 @@ import { generateEvent, fileToBase64, createSC, call, Address, transferCoins, Ar
 function createContract(): Address {
     const bytes = fileToBase64('./build/sample-contract.wasm');
     const sc_address = createSC(bytes);
-    transferCoins(sc_address, 100_000_000_000);
+    transferCoins(sc_address, 50_000_000_000);
     return sc_address;
 }
 
