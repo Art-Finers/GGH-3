@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import SampleLoader from './App';
 import reportWebVitals from './reportWebVitals';
+import Massa from './Massa';
 
 ReactDOM.render(
   <React.StrictMode>
     <SampleLoader />
+    <Massa />
   </React.StrictMode>,
   document.getElementById('root')
 );
