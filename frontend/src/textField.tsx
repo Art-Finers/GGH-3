@@ -11,7 +11,7 @@ const TextField = () => (
       <input
           type="text"
           id="header-search"
-          placeholder="URL to sample"
+          placeholder="URL vers sample"
           name="s" 
       />
       <button type="submit">Chargement</button>
