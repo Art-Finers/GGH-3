@@ -125,8 +125,7 @@ export default class SampleLoader extends React.Component {
   render() {
     const state = this.state;
     return (
-      <div>
-        <h1>{state.name}</h1>
+      <div id="content">
         <button onClick={this.upload}>Upload</button>
         <button onClick={this.download}>Download</button>
       </div>

@@ -1,7 +1,10 @@
-body {
-  text-align: center;
+body button{
   font: 14px "Century Gothic", Futura, sans-serif;
   margin: 20px;
+}
+
+body{
+  text-align: center;
 }
 
 ol,
