@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import LogoComponent from "./LogoComponent";
+import Player from "./Player";
 
 const HeaderStyle = styled.header`
     background-color: #282c34;
@@ -19,6 +20,7 @@ export default function Header() {
         <HeaderStyle>
             <LogoComponent />
             <h1> | </h1>
+            <Player />
         </HeaderStyle>
         );
 }
