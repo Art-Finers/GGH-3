@@ -1,3 +1,5 @@
+<img align="right" src="https://visitor-badge.laobi.icu/badge?page_id=bictole.artfineurs&right_color=yellow">
+
 <img src="https://github.com/Art-Finers/GGH-3/blob/main/samply.png" alt="Samply">
 
  [![Profile][title-img]][profile]
